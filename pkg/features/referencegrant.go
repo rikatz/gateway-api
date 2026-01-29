@@ -29,8 +29,10 @@ const (
 
 // ReferenceGrantFeature contains metadata for the ReferenceGrant feature.
 var ReferenceGrantFeature = Feature{
-	Name:    SupportReferenceGrant,
-	Channel: FeatureChannelStandard,
+	Name:        SupportReferenceGrant,
+	Channel:     FeatureChannelStandard,
+	Description: "Implements the capability for secure cross-namespace references from Routes, enabling traffic forwarding and route inclusion across namespace boundaries with explicit trust handshakes",
+	GEPNumber:   709,
 }
 
 // ReferenceGrantCoreFeatures includes all SupportedFeatures needed to be

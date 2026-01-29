@@ -29,8 +29,10 @@ const (
 
 // MeshFeature contains metadata for the Mesh feature.
 var MeshFeature = Feature{
-	Name:    SupportMesh,
-	Channel: FeatureChannelStandard,
+	Name:        SupportMesh,
+	Channel:     FeatureChannelStandard,
+	Description: "Implements the capability for service mesh functionality, allowing Gateway API to manage east-west traffic between services within a cluster",
+	GEPNumber:   1324,
 }
 
 // MeshCoreFeatures includes all the supported features for the service mesh at
@@ -67,55 +69,73 @@ const (
 var (
 	// MeshClusterIPMatchingFeature contains metadata for the MeshClusterIPMatching feature.
 	MeshClusterIPMatchingFeature = Feature{
-		Name:    SupportMeshClusterIPMatching,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshClusterIPMatching,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for matching Service traffic specifically by Cluster IP in mesh mode",
+		GEPNumber:   1324,
 	}
 	// MeshConsumerRouteFeature contains metadata for the MeshConsumerRoute feature.
 	MeshConsumerRouteFeature = Feature{
-		Name:    SupportMeshConsumerRoute,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshConsumerRoute,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for consumer routes in mesh mode, where a namespace creates a route for a service in another namespace",
+		GEPNumber:   1324,
 	}
 
 	// MeshHTTPRouteRewritePath contains metadata for the MeshHTTPRouteRewritePath feature.
 	MeshHTTPRouteRewritePath = Feature{
-		Name:    SupportMeshHTTPRouteRewritePath,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshHTTPRouteRewritePath,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for HTTPRoute path rewrite in mesh mode, allowing modification of request paths before forwarding to backends",
+		GEPNumber:   726,
 	}
 
 	// MeshHTTPRouteSchemeRedirect contains metadata for the MeshHTTPRouteSchemeRedirect feature.
 	MeshHTTPRouteSchemeRedirect = Feature{
-		Name:    SupportMeshHTTPRouteSchemeRedirect,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshHTTPRouteSchemeRedirect,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for HTTPRoute scheme redirect in mesh mode, allowing redirection between HTTP and HTTPS schemes",
+		GEPNumber:   726,
 	}
 
 	// MeshHTTPRouteRedirectPort contains metadata for the MeshHTTPRouteRedirectPort feature.
 	MeshHTTPRouteRedirectPort = Feature{
-		Name:    SupportMeshHTTPRouteRedirectPort,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshHTTPRouteRedirectPort,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for HTTPRoute port redirect in mesh mode, allowing redirection to different ports",
+		GEPNumber:   726,
 	}
 
 	// MeshHTTPRouteRedirectPath contains metadata for the MeshHTTPRouteRedirectPath feature.
 	MeshHTTPRouteRedirectPath = Feature{
-		Name:    SupportMeshHTTPRouteRedirectPath,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshHTTPRouteRedirectPath,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for HTTPRoute path redirect in mesh mode, allowing redirection to different URL paths",
+		GEPNumber:   726,
 	}
 
 	// MeshHTTPRouteRedirectPath contains metadata for the MeshHTTPRouteRedirectPath feature.
 	MeshHTTPRouteBackendRequestHeaderModification = Feature{
-		Name:    SupportMeshHTTPRouteBackendRequestHeaderModification,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshHTTPRouteBackendRequestHeaderModification,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for HTTPRoute backend request header modification in mesh mode, allowing headers to be added, modified, or removed before forwarding to backends",
+		GEPNumber:   1323,
 	}
 
 	// MeshHTTPRouteRedirectPath contains metadata for the MeshHTTPRouteRedirectPath feature.
 	MeshHTTPRouteQueryParamMatching = Feature{
-		Name:    SupportMeshHTTPRouteQueryParamMatching,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshHTTPRouteQueryParamMatching,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for HTTPRoute query parameter matching in mesh mode, allowing routing decisions based on URL query parameters",
+		GEPNumber:   0,
 	}
 
 	// MeshHTTPRouteNamedRouteRule contains metadata for the MeshHTTPRouteNamedRouteRule feature.
 	MeshHTTPRouteNamedRouteRule = Feature{
-		Name:    SupportMeshHTTPRouteNamedRouteRule,
-		Channel: FeatureChannelStandard,
+		Name:        SupportMeshHTTPRouteNamedRouteRule,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements support for the name field in HTTPRouteRule in mesh mode, allowing individual route rules to be referenced by name from other resources",
+		GEPNumber:   995,
 	}
 )
 

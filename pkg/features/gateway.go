@@ -30,8 +30,10 @@ const (
 
 // GatewayFeature contains metadata for the Gateway feature.
 var GatewayFeature = Feature{
-	Name:    SupportGateway,
-	Channel: FeatureChannelStandard,
+	Name:        SupportGateway,
+	Channel:     FeatureChannelStandard,
+	Description: "Implements the core Gateway resource, providing a way to configure and manage ingress points for traffic entering the cluster",
+	GEPNumber:   0,
 }
 
 // GatewayCoreFeatures are the features that are required to be conformant with
@@ -83,45 +85,61 @@ const (
 var (
 	// GatewayPort8080Feature contains metadata for the GatewayPort8080 feature.
 	GatewayPort8080Feature = Feature{
-		Name:    SupportGatewayPort8080,
-		Channel: FeatureChannelStandard,
+		Name:        SupportGatewayPort8080,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for Gateway to use port 8080 as a listener port",
+		GEPNumber:   0,
 	}
 	// GatewayStaticAddressesFeature contains metadata for the GatewayStaticAddresses feature.
 	GatewayStaticAddressesFeature = Feature{
-		Name:    SupportGatewayStaticAddresses,
-		Channel: FeatureChannelStandard,
+		Name:        SupportGatewayStaticAddresses,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for Gateway to allocate pre-determined static addresses rather than dynamically assigned addresses",
+		GEPNumber:   0,
 	}
 	// GatewayHTTPListenerIsolationFeature contains metadata for the GatewayHTTPListenerIsolation feature.
 	GatewayHTTPListenerIsolationFeature = Feature{
-		Name:    SupportGatewayHTTPListenerIsolation,
-		Channel: FeatureChannelStandard,
+		Name:        SupportGatewayHTTPListenerIsolation,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for isolation of HTTP listeners within a Gateway, preventing cross-listener interference",
+		GEPNumber:   0,
 	}
 	// GatewayInfrastructurePropagationFeature contains metadata for the GatewayInfrastructurePropagation feature.
 	GatewayInfrastructurePropagationFeature = Feature{
-		Name:    SupportGatewayInfrastructurePropagation,
-		Channel: FeatureChannelStandard,
+		Name:        SupportGatewayInfrastructurePropagation,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for propagating annotations and labels from Gateway spec.infrastructure to the underlying infrastructure resources",
+		GEPNumber:   1867,
 	}
 	// GatewayEmptyAddressFeature contains metadata for the SupportGatewayAddressEmpty feature.
 	GatewayEmptyAddressFeature = Feature{
-		Name:    SupportGatewayAddressEmpty,
-		Channel: FeatureChannelStandard,
+		Name:        SupportGatewayAddressEmpty,
+		Channel:     FeatureChannelStandard,
+		Description: "Implements the capability for an empty spec.addresses.value field in Gateway configuration",
+		GEPNumber:   0,
 	}
 
 	// GatewayListenerSetFeature contains metadata for the SupportGatewayListenerSet feature.
 	GatewayListenerSetFeature = Feature{
-		Name:    SupportGatewayListenerSet,
-		Channel: FeatureChannelExperimental,
+		Name:        SupportGatewayListenerSet,
+		Channel:     FeatureChannelExperimental,
+		Description: "Implements the capability for ListenerSets, providing a standard mechanism to merge multiple Gateways into a single unified Gateway configuration",
+		GEPNumber:   1713,
 	}
 
 	// GatewayBackendClientCertificateFeature contains metadata for the SupportGatewayBackendClientCertificate feature.
 	GatewayBackendClientCertificateFeature = Feature{
-		Name:    SupportGatewayBackendClientCertificate,
-		Channel: FeatureChannelExperimental,
+		Name:        SupportGatewayBackendClientCertificate,
+		Channel:     FeatureChannelExperimental,
+		Description: "Implements the capability for specifying client certificates when the Gateway originates connections to backends, enabling mutual TLS authentication",
+		GEPNumber:   3155,
 	}
 	// GatewayFrontendClientCertificateValidationFeature contains metadata for the GatewayFrontendClientCertificateValidation feature.
 	GatewayFrontendClientCertificateValidationFeature = Feature{
-		Name:    SupportGatewayFrontendClientCertificateValidation,
-		Channel: FeatureChannelExperimental,
+		Name:        SupportGatewayFrontendClientCertificateValidation,
+		Channel:     FeatureChannelExperimental,
+		Description: "Implements the capability for client certificate validation when the Gateway terminates TLS connections from clients, ensuring secure frontend authentication",
+		GEPNumber:   91,
 	}
 )
 

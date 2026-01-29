@@ -28,6 +28,9 @@ const (
 
 	// This option indicates support for TLSRoute mode Terminate (extended conformance)
 	SupportTLSRouteModeTerminate FeatureName = "TLSRouteModeTerminate"
+
+	// This option indicates support for mixed TLS modes (Passthrough and Terminate) on the same Gateway (extended conformance)
+	SupportTLSRouteModeMixed FeatureName = "TLSRouteModeMixed"
 )
 
 var (
@@ -35,14 +38,21 @@ var (
 	TLSRouteFeature = Feature{
 		Name:        SupportTLSRoute,
 		Channel:     FeatureChannelExperimental,
-		Description: "Implements the capability for TLSRoute, allowing a user to route traffic based on SNI attributes",
+		Description: "Implements the TLSRoute resource in passthrough mode, providing SNI-based routing for encrypted TLS traffic",
 		GEPNumber:   2643,
 	}
-	// TLSRouteModeTerminate contains metadata for the TLSRouteModeTerminate feature.
+	// TLSRouteModeTerminateFeature contains metadata for the TLSRouteModeTerminate feature.
 	TLSRouteModeTerminateFeature = Feature{
 		Name:        SupportTLSRouteModeTerminate,
 		Channel:     FeatureChannelExperimental,
-		Description: "Implements the capability for a TLSRoute to be terminated on the Gateway, making the proxy pass the unencrypted packets to the backend without caring about attributes other than a TCP communication.",
+		Description: "Implements TLS termination mode for TLSRoute, allowing the Gateway to terminate TLS and forward unencrypted TCP traffic to backends",
+		GEPNumber:   2643,
+	}
+	// TLSRouteModeMixedFeature contains metadata for the TLSRouteModeMixed feature.
+	TLSRouteModeMixedFeature = Feature{
+		Name:        SupportTLSRouteModeMixed,
+		Channel:     FeatureChannelExperimental,
+		Description: "Implements support for mixed TLS modes on the same Gateway, allowing both passthrough and terminate listeners to coexist",
 		GEPNumber:   2643,
 	}
 )
@@ -58,4 +68,5 @@ var TLSRouteCoreFeatures = sets.New(
 // This does not include any Core Features.
 var TLSRouteExtendedFeatures = sets.New(
 	TLSRouteModeTerminateFeature,
+	TLSRouteModeMixedFeature,
 )

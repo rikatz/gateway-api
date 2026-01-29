@@ -29,8 +29,10 @@ const (
 
 // GRPCRouteFeature contains metadata for the GRPCRoute feature.
 var GRPCRouteFeature = Feature{
-	Name:    SupportGRPCRoute,
-	Channel: FeatureChannelStandard,
+	Name:        SupportGRPCRoute,
+	Channel:     FeatureChannelStandard,
+	Description: "Implements the capability for GRPCRoute, providing idiomatic routing for gRPC traffic with support for service and method-based matching",
+	GEPNumber:   1016,
 }
 
 // GRPCRouteCoreFeatures includes all the supported features for GRPCRoute at
@@ -50,8 +52,10 @@ const (
 
 // GRPCRouteNamedRouteRule contains metadata for the SupportGRPCRouteNamedRouteRule feature.
 var GRPCRouteNamedRouteRule = Feature{
-	Name:    SupportGRPCRouteNamedRouteRule,
-	Channel: FeatureChannelStandard,
+	Name:        SupportGRPCRouteNamedRouteRule,
+	Channel:     FeatureChannelStandard,
+	Description: "Implements support for the name field in GRPCRouteRule, allowing individual route rules to be referenced by name from other resources",
+	GEPNumber:   995,
 }
 
 // GRPCRouteExtendedFeatures includes all extended features for GRPCRoute

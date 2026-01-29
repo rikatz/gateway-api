@@ -32,15 +32,19 @@ const (
 
 // BackendTLSPolicyFeature contains metadata for the BackendTLSPolicy feature.
 var BackendTLSPolicyFeature = Feature{
-	Name:    SupportBackendTLSPolicy,
-	Channel: FeatureChannelStandard,
+	Name:        SupportBackendTLSPolicy,
+	Channel:     FeatureChannelStandard,
+	Description: "Implements the capability for configuring TLS connections from the Gateway to backend pods, including server name indication and trusted CA certificates",
+	GEPNumber:   1897,
 }
 
 // BackendTLSPolicySanValidationFeature contains metadata for the BackendTLSPolicy
 // SubjectAltName Validation feature.
 var BackendTLSPolicySanValidationFeature = Feature{
-	Name:    SupportBackendTLSPolicySANValidation,
-	Channel: FeatureChannelStandard,
+	Name:        SupportBackendTLSPolicySANValidation,
+	Channel:     FeatureChannelStandard,
+	Description: "Implements the capability for validating backend TLS certificates using SubjectAltName (SAN) fields to ensure secure backend connections",
+	GEPNumber:   1897,
 }
 
 // BackendTLSPolicyCoreFeatures includes all the supported features for the

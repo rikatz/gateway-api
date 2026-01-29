@@ -27,8 +27,10 @@ const (
 
 // UDPRouteFeature contains metadata for the UDPRoute feature.
 var UDPRouteFeature = Feature{
-	Name:    SupportUDPRoute,
-	Channel: FeatureChannelExperimental,
+	Name:        SupportUDPRoute,
+	Channel:     FeatureChannelExperimental,
+	Description: "Implements the capability for UDPRoute, allowing routing of UDP traffic to backend services",
+	GEPNumber:   0,
 }
 
 // UDPRouteCoreFeatures includes all SupportedFeatures needed to be conformant with
