@@ -33,13 +33,17 @@ const (
 var (
 	// TLSRouteFeature contains metadata for the TLSRoute feature.
 	TLSRouteFeature = Feature{
-		Name:    SupportTLSRoute,
-		Channel: FeatureChannelExperimental,
+		Name:        SupportTLSRoute,
+		Channel:     FeatureChannelExperimental,
+		Description: "Implements the capability for TLSRoute, allowing a user to route traffic based on SNI attributes",
+		GEPNumber:   2643,
 	}
 	// TLSRouteModeTerminate contains metadata for the TLSRouteModeTerminate feature.
 	TLSRouteModeTerminateFeature = Feature{
-		Name:    SupportTLSRouteModeTerminate,
-		Channel: FeatureChannelExperimental,
+		Name:        SupportTLSRouteModeTerminate,
+		Channel:     FeatureChannelExperimental,
+		Description: "Implements the capability for a TLSRoute to be terminated on the Gateway, making the proxy pass the unencrypted packets to the backend without caring about attributes other than a TCP communication.",
+		GEPNumber:   2643,
 	}
 )
 

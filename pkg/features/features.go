@@ -28,6 +28,12 @@ type FeatureName string
 // FeatureChannel is the type used to represent the channel to which a feature belongs.
 type FeatureChannel string
 
+// FeatureDescription contains a quick summary of what the feature implements
+type FeatureDescription string
+
+// FeatureGEPNumber describes what was the main GEP that implemented this feature
+type FeatureGEPNumber uint
+
 const (
 	// FeatureChannelExperimental is used for experimental features.
 	FeatureChannelExperimental = "experimental"
@@ -37,8 +43,10 @@ const (
 
 // Feature is a struct that represents a feature.
 type Feature struct {
-	Name    FeatureName
-	Channel FeatureChannel
+	Name        FeatureName
+	Channel     FeatureChannel
+	Description FeatureDescription
+	GEPNumber   FeatureGEPNumber
 }
 
 // -----------------------------------------------------------------------------
