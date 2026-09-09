@@ -15,6 +15,9 @@
 # We need all the Make variables exported as env vars.
 # Note that the ?= operator works regardless.
 
+# Ensure correct toolchain is used
+export GOTOOLCHAIN=go$(shell sed -n 's/^go //p' go.work)
+
 # Enable Go modules.
 export GO111MODULE=on
 
