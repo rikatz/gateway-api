@@ -42,8 +42,7 @@ var BackendTLSPolicyTLSRouteTerminate = suite.ConformanceTest{
 		features.SupportTLSRouteModeTerminate,
 		features.SupportBackendTLSPolicy,
 	},
-	Provisional: true,
-	Manifests:   []string{"tests/backendtlspolicy-tlsroute-terminate.yaml"},
+	Manifests: []string{"tests/backendtlspolicy-tlsroute-terminate.yaml"},
 	Test: func(t *testing.T, suite *suite.ConformanceTestSuite) {
 		ns := "gateway-conformance-infra"
 		routeNN := types.NamespacedName{Name: "backendtlspolicy-tlsroute-terminate", Namespace: ns}
