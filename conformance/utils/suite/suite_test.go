@@ -536,6 +536,7 @@ func TestInferGWCSupportedFeatures(t *testing.T) {
 				SupportedFeatures:          tc.supportedFeatures,
 				ExemptFeatures:             tc.exemptFeatures,
 				ConformanceProfiles:        tc.ConformanceProfile,
+				ServiceCIDRs:               []string{"10.96.0.0/12"},
 			},
 			Client: fakeClient,
 		}
@@ -549,6 +550,7 @@ func TestInferGWCSupportedFeatures(t *testing.T) {
 			if cSuite.supportedFeaturesSource != tc.expectedSource {
 				t.Errorf("InferredSupportedFeatures mismatch: got %v, want %v", cSuite.supportedFeaturesSource, tc.expectedSource)
 			}
+			assert.Equal(t, []string{"10.96.0.0/12"}, cSuite.ServiceCIDRs)
 
 			if equal := cSuite.SupportedFeatures.Equal(tc.expectedFeatures); !equal {
 				t.Errorf("SupportedFeatures mismatch: got %v, want %v", cSuite.SupportedFeatures.UnsortedList(), tc.expectedFeatures.UnsortedList())
