@@ -101,7 +101,7 @@ const (
 	// Note: This feature is expected to move to Core conformance soon, so
 	// implementations are strongly encouraged to support it.
 	SupportGatewayRouteHostnameIntersectionPrecedence FeatureName = "GatewayRouteHostnameIntersectionPrecedence"
-	
+
 	// SupportClusterTrustBundle option indicates support for ClusterTrustBundle
 	// references in BackendTLSPolicyValidation and Gateway frontend TLS validation.
 	SupportClusterTrustBundle FeatureName = "ClusterTrustBundle"
@@ -176,8 +176,9 @@ var (
 	GatewayRouteHostnameIntersectionPrecedenceFeature = Feature{
 		Name:    SupportGatewayRouteHostnameIntersectionPrecedence,
 		Channel: FeatureChannelStandard,
-	
-		// ClusterTrustBundleFeature contains metadata for the ClusterTrustBundle reference
+	}
+
+	// ClusterTrustBundleFeature contains metadata for the ClusterTrustBundle reference
 	// feature, used by both BackendTLSPolicy and Gateway frontend TLS validation.
 	ClusterTrustBundleFeature = Feature{
 		Name:    SupportClusterTrustBundle,
